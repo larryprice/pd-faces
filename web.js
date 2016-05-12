@@ -51,7 +51,7 @@ var renderRandomResponse = function(person, survey) {
     displayName: person.name,
     avatarURL: "https://www.gravatar.com/avatar/" + crypto.createHash('md5').update(person.email.trim().toLowerCase()).digest('hex') + "?r=pg&d=retro&s=512",
     question: response.question,
-    baseQuestion: response.question.substring(0, response.question.indexOf('?')+1),
+    baseQuestion: response.question.substring(0, response.question.indexOf('?')+1) + " " + "[" + survey.year + " Q" + survey.quarter + "]",
     answer: response.answer
   });
 };
