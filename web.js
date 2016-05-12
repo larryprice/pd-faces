@@ -172,7 +172,7 @@ app.get('/:year(\\d{4})?/:quarter(\\d)?', function(req, res, next) {
       res.send(err);
       return;
     } else if (!person) {
-      return next(new Error("No survey results found. Try a different quarter or check out /forever instead."));
+      return res.redirect(302, '/forever');
     }
 
     res.send(renderRandomResponse(person, person.surveys.find(function(el) {
